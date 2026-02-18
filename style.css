@@ -13,6 +13,8 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
     color: #333;
     overflow-x: hidden;
+    min-height: 100vh;
+    width: 100%;
 }
 
 /* Navbar */
@@ -50,6 +52,8 @@ nav a {
     position: relative;
     transition: color 0.3s ease;
     padding: 5px 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 nav a::after {
@@ -69,6 +73,10 @@ nav a:hover {
 
 nav a:hover::after {
     width: 100%;
+}
+
+nav a:active {
+    color: #4e73df;
 }
 
 .logo {
@@ -169,6 +177,8 @@ nav a:hover::after {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn::before {
@@ -189,6 +199,10 @@ nav a:hover::after {
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(78, 115, 223, 0.4);
+}
+
+.btn:active {
+    transform: translateY(-1px);
 }
 
 .hero-image {
@@ -253,6 +267,10 @@ nav a:hover::after {
         gap: 20px;
         max-width: 100%;
     }
+    
+    nav {
+        padding: 20px 5%;
+    }
 }
 
 @media (max-width: 992px) {
@@ -260,6 +278,7 @@ nav a:hover::after {
         flex-direction: column-reverse;
         text-align: center;
         padding: 60px 5%;
+        min-height: auto;
     }
 
     .hero-image {
@@ -272,6 +291,11 @@ nav a:hover::after {
 
     .hero-text h1 {
         font-size: 36px;
+        line-height: 1.3;
+    }
+    
+    .hero-text p {
+        font-size: 15px;
     }
 
     .hero-image .circle,
@@ -286,10 +310,15 @@ nav a:hover::after {
 
     nav ul {
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     nav ul li {
-        margin-left: 15px;
+        margin: 5px 12px;
+    }
+    
+    .logo {
+        font-size: 18px;
     }
 
     .section {
@@ -299,23 +328,48 @@ nav a:hover::after {
     .section h2 {
         font-size: 32px;
     }
+    
+    .section p {
+        font-size: 15px;
+    }
 
     .btn {
         padding: 12px 24px;
         font-size: 14px;
+        margin: 8px;
     }
 
     .card {
         width: 100%;
         max-width: 350px;
     }
+    
+    .card h3 {
+        font-size: 17px;
+    }
+    
+    .card p {
+        font-size: 14px;
+    }
 
     .figma-embed {
         padding: 25px;
     }
+    
+    .figma-embed h3 {
+        font-size: 24px;
+    }
+    
+    .figma-embed h4 {
+        font-size: 18px;
+    }
 
     .project-box {
-        padding: 20px;
+        padding: 25px 20px;
+    }
+    
+    .project-box h3 {
+        font-size: 22px;
     }
 
     .contact-container {
@@ -329,66 +383,290 @@ nav a:hover::after {
 }
 
 @media (max-width: 768px) {
-    .contact-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+    nav {
+        flex-direction: row;
+        padding: 12px 4%;
+    }
+    
+    .logo {
+        font-size: 16px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    nav ul li {
+        margin: 3px 8px;
+    }
+    
+    nav a {
+        font-size: 14px;
+    }
+    
+    .hero {
+        padding: 40px 4%;
+    }
+    
+    .hero-text h1 {
+        font-size: 30px;
+    }
+    
+    .hero-text h4 {
+        font-size: 17px;
+    }
+    
+    .hero-image .circle,
+    .hero-image img {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .section {
+        padding: 50px 4%;
+    }
+    
+    .section h2 {
+        font-size: 28px;
+    }
+    
+    .card-container {
+        gap: 25px;
+    }
+    
+    .project-box {
+        margin-bottom: 25px;
+        padding: 20px 15px;
+    }
+    
+    .figma-embed {
+        padding: 20px 15px;
+    }
+    
+    .figma-embed iframe {
+        height: 380px;
     }
 
-    .section {
-        padding: 60px 5%;
+    .contact-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
     }
 
     .contact-card {
-        min-height: 180px;
+        min-height: 170px;
+        padding: 25px 12px;
+    }
+    
+    .contact-card h4 {
+        font-size: 16px;
     }
 }
 
 @media (max-width: 576px) {
+    nav {
+        flex-direction: column;
+        padding: 15px 5%;
+        gap: 12px;
+    }
+    
+    .logo {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    
+    nav ul {
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 4px 8px;
+    }
+    
+    nav a {
+        font-size: 13px;
+    }
+    
+    .hero {
+        padding: 30px 5%;
+    }
+    
     .hero-text h1 {
-        font-size: 28px;
+        font-size: 24px;
+        line-height: 1.4;
     }
 
     .hero-text h4 {
-        font-size: 16px;
+        font-size: 15px;
+    }
+    
+    .hero-text p {
+        font-size: 14px;
+        line-height: 1.7;
     }
 
     .hero-image .circle,
     .hero-image img {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero-image .circle {
+        top: 15px;
+        right: 15px;
     }
 
-    nav ul {
-        justify-content: center;
+    .section {
+        padding: 40px 5%;
     }
-
-    nav ul li {
-        margin: 5px 10px;
-    }
-
+    
     .section h2 {
-        font-size: 26px;
+        font-size: 24px;
+    }
+    
+    .section h2::after {
+        width: 60px;
+        height: 3px;
+    }
+    
+    .section p {
+        font-size: 14px;
+        line-height: 1.7;
     }
 
     .btn {
         display: block;
+        width: 80%;
+        max-width: 280px;
         margin: 10px auto;
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+    
+    .card-container {
+        gap: 20px;
+    }
+    
+    .card {
+        max-width: 100%;
+    }
+    
+    .card h3 {
+        font-size: 16px;
+        margin: 15px 12px 8px;
+    }
+    
+    .card p {
+        font-size: 13px;
+        padding: 0 12px;
+    }
+    
+    .project-box {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+    
+    .project-box h3 {
+        font-size: 20px;
+    }
+    
+    .project-box p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .project-box a {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    .figma-embed {
+        padding: 20px 12px;
+    }
+    
+    .figma-embed h3 {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+    
+    .figma-embed h4 {
+        font-size: 16px;
+        margin: 25px 0 15px;
+    }
+    
+    .figma-embed iframe {
+        height: 320px;
     }
 
     .contact-container {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
+        padding: 0 10px;
     }
 
     .contact-card {
-        padding: 30px 15px;
-        min-height: 160px;
+        padding: 25px 15px;
+        min-height: 140px;
+    }
+    
+    .contact-card h4 {
+        font-size: 16px;
+        margin-bottom: 5px;
     }
 
     .contact-icon {
         width: 55px;
         height: 55px;
         font-size: 26px;
+        margin-bottom: 12px;
+    }
+    
+    .contact-subtitle {
+        font-size: 15px;
+        margin-bottom: 35px;
+        padding: 0 10px;
+    }
+    
+    footer {
+        padding: 25px 15px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-text h1 {
+        font-size: 22px;
+    }
+    
+    .hero-text h4 {
+        font-size: 14px;
+    }
+    
+    .hero-image .circle,
+    .hero-image img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .section h2 {
+        font-size: 22px;
+    }
+    
+    nav ul li {
+        margin: 3px 5px;
+    }
+    
+    .btn {
+        width: 90%;
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+    
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
     }
 }
 
@@ -426,6 +704,20 @@ nav a:hover::after {
     color: #555;
 }
 
+.polinema-link {
+    color: #4e73df;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.polinema-link:hover {
+    color: #1cc88a;
+    border-bottom-color: #1cc88a;
+}
+
 .bg-light {
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
 }
@@ -450,6 +742,7 @@ nav a:hover::after {
     gap: 35px;
     flex-wrap: wrap;
     margin-top: 50px;
+    padding: 0 15px;
 }
 
 .card {
@@ -534,6 +827,8 @@ nav a:hover::after {
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
     border-left: 5px solid transparent;
+    width: 100%;
+    max-width: 100%;
 }
 
 .project-box:hover {
@@ -564,11 +859,17 @@ nav a:hover::after {
     display: inline-block;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(78, 115, 223, 0.3);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .project-box a:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(78, 115, 223, 0.4);
+}
+
+.project-box a:active {
+    transform: translateY(-1px);
 }
 
 .figma-embed {
@@ -577,6 +878,8 @@ nav a:hover::after {
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 100%;
 }
 
 .figma-embed h3 {
@@ -595,6 +898,8 @@ nav a:hover::after {
     border-radius: 15px;
     border: 2px solid #e9ecef;
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 100%;
 }
 
 .figma-embed iframe:hover {
@@ -653,6 +958,8 @@ footer p {
     position: relative;
     overflow: hidden;
     min-height: 160px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .contact-card::before {
@@ -672,10 +979,18 @@ footer p {
     opacity: 1;
 }
 
+.contact-card:active::before {
+    opacity: 1;
+}
+
 .contact-card:hover {
     transform: translateY(-10px);
     border-color: rgba(108, 142, 239, 0.4);
     box-shadow: 0 15px 40px rgba(108, 142, 239, 0.25);
+}
+
+.contact-card:active {
+    transform: translateY(-5px);
 }
 
 .contact-icon {
