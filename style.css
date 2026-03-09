@@ -1532,7 +1532,7 @@ html[data-theme="light"] .stat-item {
     -webkit-backdrop-filter: blur(10px);
     display: grid;
     grid-template-columns: minmax(260px, 420px) 1fr;
-    align-items: center;
+    align-items: stretch;
     gap: 28px;
     box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
     text-align: left;
@@ -1541,15 +1541,16 @@ html[data-theme="light"] .stat-item {
 .organization-image-wrap {
     border-radius: 18px;
     overflow: hidden;
-    min-height: 280px;
+    height: clamp(240px, 30vw, 340px);
     border: 1px solid rgba(12, 123, 131, 0.25);
 }
 
 .organization-image {
     width: 100%;
     height: 100%;
-    min-height: 280px;
+    display: block;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.35s ease;
 }
 
@@ -1579,9 +1580,8 @@ html[data-theme="light"] .stat-item {
         padding: 20px;
     }
 
-    .organization-image-wrap,
-    .organization-image {
-        min-height: 240px;
+    .organization-image-wrap {
+        height: 260px;
     }
 
     .organization-text h3 {
@@ -1595,9 +1595,8 @@ html[data-theme="light"] .stat-item {
         border-radius: 18px;
     }
 
-    .organization-image-wrap,
-    .organization-image {
-        min-height: 200px;
+    .organization-image-wrap {
+        height: 210px;
     }
 
     .organization-text h3 {
