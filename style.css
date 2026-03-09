@@ -1047,12 +1047,12 @@ nav a:active {
 }
 
 html[data-theme="light"] .bg-dark h2 {
-    color: #f4f7ff;
+    color: #1f2937;
 }
 
-html[data-theme="light"] .bg-dark p,
+html[data-theme="light"] .bg-dark > p,
 html[data-theme="light"] .contact-subtitle {
-    color: rgba(244, 247, 255, 0.92);
+    color: #475569;
 }
 
 html[data-theme="light"] .bg-dark a {
@@ -1568,10 +1568,10 @@ footer p {
 
 /* Contact Section */
 .contact-subtitle {
-    font-size: 18px;
+    font-size: 17px;
     color: var(--text-secondary);
-    margin-bottom: 50px;
-    max-width: 700px;
+    margin-bottom: 42px;
+    max-width: 760px;
     margin-left: auto;
     margin-right: auto;
     font-weight: 500;
@@ -1581,32 +1581,36 @@ footer p {
 .contact-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 28px;
-    max-width: 1300px;
+    gap: 22px;
+    max-width: 1240px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 12px;
 }
 
 .contact-card {
-    background: linear-gradient(135deg, rgba(12, 123, 131, 0.15) 0%, rgba(242, 186, 232, 0.12) 100%);
+    --contact-accent: var(--accent-primary);
+    --contact-accent-strong: #4f46e5;
+    --contact-accent-rgb: 78, 115, 223;
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 2px solid rgba(12, 123, 131, 0.3);
+    border: 2px solid var(--card-border);
     border-radius: 20px;
-    padding: 35px 20px;
+    padding: 30px 18px;
     text-align: center;
-    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.35s ease;
     text-decoration: none;
-    color: var(--contact-text);
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    min-height: 240px;
+    min-height: 220px;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22);
 }
 
 .contact-card::before {
@@ -1616,9 +1620,9 @@ footer p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s ease;
     z-index: 0;
     pointer-events: none;
 }
@@ -1626,42 +1630,46 @@ footer p {
 .contact-card::after {
     content: '';
     position: absolute;
-    bottom: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
-    animation: none;
-    transition: all 0.4s ease;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent 0%, rgba(var(--contact-accent-rgb), 0.95) 50%, transparent 100%);
+    opacity: 0.85;
 }
 
 .contact-card:nth-child(1) {
-    background: var(--contact-bg-1);
+    --contact-accent: #6e8bff;
+    --contact-accent-strong: #4f46e5;
+    --contact-accent-rgb: 110, 139, 255;
 }
 
 .contact-card:nth-child(2) {
-    background: var(--contact-bg-2);
+    --contact-accent: #34d399;
+    --contact-accent-strong: #0f9d72;
+    --contact-accent-rgb: 52, 211, 153;
 }
 
 .contact-card:nth-child(3) {
-    background: var(--contact-bg-3);
+    --contact-accent: #60a5fa;
+    --contact-accent-strong: #2563eb;
+    --contact-accent-rgb: 96, 165, 250;
 }
 
 .contact-card:nth-child(4) {
-    background: var(--contact-bg-4);
+    --contact-accent: #f59e0b;
+    --contact-accent-strong: #d97706;
+    --contact-accent-rgb: 245, 158, 11;
 }
 
 .contact-card:nth-child(5) {
-    background: var(--contact-bg-5);
+    --contact-accent: #22c55e;
+    --contact-accent-strong: #16a34a;
+    --contact-accent-rgb: 34, 197, 94;
 }
 
 .contact-card:hover::before {
     opacity: 1;
-}
-
-.contact-card:hover::after {
-    bottom: -30%;
-    right: -30%;
 }
 
 .contact-card:active::before {
@@ -1669,55 +1677,65 @@ footer p {
 }
 
 .contact-card:hover {
-    transform: translateY(-18px) scale(1.02);
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 30px 60px var(--btn-shadow-strong), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px);
+    border-color: rgba(var(--contact-accent-rgb), 0.45);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.26), 0 0 0 1px rgba(var(--contact-accent-rgb), 0.35);
 }
 
 .contact-card:active {
-    transform: translateY(-8px) scale(0.98);
+    transform: translateY(-5px);
 }
 
 .contact-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.25);
+    width: 76px;
+    height: 76px;
+    background:
+        radial-gradient(circle at 28% 24%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 45%),
+        linear-gradient(145deg, rgba(var(--contact-accent-rgb), 0.26), rgba(var(--contact-accent-rgb), 0.1));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 18px;
-    font-size: 38px;
-    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    margin: 0 auto 16px;
+    font-size: 34px;
+    transition: all 0.35s ease;
     position: relative;
     z-index: 1;
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    color: #ffffff;
+    box-shadow: 0 8px 18px rgba(var(--contact-accent-rgb), 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(var(--contact-accent-rgb), 0.32);
+    color: var(--contact-accent-strong);
+}
+
+.contact-icon i {
+    background: linear-gradient(140deg, var(--contact-accent-strong) 0%, var(--contact-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .contact-card:hover .contact-icon {
-    transform: rotateY(360deg) scale(1.15) translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-3px) scale(1.08) rotate(-6deg);
+    background:
+        radial-gradient(circle at 28% 24%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 45%),
+        linear-gradient(145deg, rgba(var(--contact-accent-rgb), 0.34), rgba(var(--contact-accent-rgb), 0.16));
 }
 
 .contact-card h4 {
-    font-size: 19px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 8px;
     font-weight: 700;
     position: relative;
     z-index: 1;
     text-align: center;
     width: 100%;
-    letter-spacing: 0.5px;
-    color: var(--contact-text);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.3px;
+    color: var(--text-primary);
+    text-shadow: none;
 }
 
 .contact-card p {
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 12.5px;
+    color: var(--text-secondary);
     margin: 0;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -1729,11 +1747,28 @@ footer p {
     padding: 0 8px;
     hyphens: auto;
     font-weight: 500;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .contact-card:hover p {
-    color: var(--contact-text-hover);
+    color: var(--text-primary);
+}
+
+html[data-theme="light"] .contact-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(78, 115, 223, 0.2);
+    box-shadow: 0 14px 28px rgba(24, 39, 75, 0.12);
+}
+
+html[data-theme="light"] .contact-card h4 {
+    color: #111827;
+}
+
+html[data-theme="light"] .contact-card p {
+    color: #4b5563;
+}
+
+html[data-theme="light"] .contact-card:hover p {
+    color: #1f2937;
 }
 
 /* Contact Links */
@@ -1742,14 +1777,14 @@ footer p {
     font-size: 16px;
 }
 
-.bg-dark a {
+.bg-dark a:not(.contact-card) {
     color: #0c7b83;
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
 }
 
-.bg-dark a:hover {
+.bg-dark a:not(.contact-card):hover {
     color: #f2bae8;
     text-decoration: underline;
 }
